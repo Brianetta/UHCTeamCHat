@@ -1,0 +1,10 @@
+name: TeamChat
+version: 1.2
+main: com.elllzman.java.TeamChat.TeamChat
+commands:
+  sendcoords:
+    usage: /sendcoords
+  pm:
+    usage: /pm <message>
+  getcoords:
+    usage: /getcoords <player>
