@@ -66,6 +66,18 @@ public class TeamChat extends JavaPlugin implements Listener {
                 }
             }
 
+            // Let spectators see (BR, 2016-02-25)
+            try {
+                for (OfflinePlayer offlineplayer : this.board.getTeam("0").getPlayers()) {
+                    if (offlineplayer.isOnline() && this.board.getPlayerTeam(p) != this.board.getTeam("0")) {
+                        Player player = (Player) offlineplayer;
+                        player.sendMessage(message);
+                    }
+                }
+            } catch (NullPointerException e) {
+                // Discard. Team wasn't set up.
+            }
+
 
             return true;
         }
